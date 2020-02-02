@@ -11,7 +11,7 @@ pipeline {
             }
         }
      stage ('Build') {
-        agent { label agentLabel }
+        agent { label agentName }
         steps {
           echo 'Running build stage'
           sh './gradlew build --no-daemon'
