@@ -1,3 +1,5 @@
+agentName = "server-slave"
+
 pipeline {
   agent none
   stages {
