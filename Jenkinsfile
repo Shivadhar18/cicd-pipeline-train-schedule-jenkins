@@ -1,7 +1,15 @@
 pipeline {
-  agent server-slave
+  agent none
   stages {
+     stage('Prep') {
+            steps {
+                script {
+                    agentName = "server-slave"
+                }
+            }
+        }
      stage ('Build') {
+        agent { label agentLabel }
         steps {
           echo 'Running build stage'
           sh './gradlew build --no-daemon'
